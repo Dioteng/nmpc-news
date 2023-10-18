@@ -3,8 +3,8 @@
 <x-card>
     <div class="flex">
         <img
-        class="hidden w-48 mr-6 md:block"
-        src="{{asset('images/no-image.png')}}"
+        class="hidden w-64 mr-6 md:block"
+        src="{{$newsItem->image ? asset('storage/' . $newsItem->image) : asset('/images/no-image.png')}}"
         alt=""
         />
         <div>

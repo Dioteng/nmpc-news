@@ -13,7 +13,9 @@ return new class extends Migration
     {
         Schema::create('news', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('user_id')->contstrained()->onDelete('cascade');
             $table->string('title');
+            $table->string('image')->nullable();
             $table->longText('body');
             $table->timestamps();
         });

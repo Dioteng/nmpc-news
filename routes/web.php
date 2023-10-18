@@ -2,7 +2,6 @@
 
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\ProfileController;
-use App\Http\Controllers\PostsController;
 use Illuminate\Support\Facades\Route;
 use App\Models\News;
 
@@ -17,14 +16,31 @@ use App\Models\News;
 |
 */
 
-// For Visitors access
-// All News List
+// Show All News List
 Route::get('/', [NewsController::class, 'index']);
 
-// Single News
+// Create News Form
+Route::get('/news/create', [NewsController::class, 'create'])->middleware('auth');
+
+// Store News Data
+Route::post('/news', [NewsController::class, 'store'])->middleware('auth');
+
+// Edit News Form
+Route::get('/news/{newsItem}/edit', [NewsController::class, 'edit'])->middleware('auth');
+
+// Submit Update
+Route::put('/news/{newsItem}', [NewsController::class, 'update'])->middleware('auth');
+
+// Delete News Data
+Route::delete('/news/{newsItem}', [NewsController::class, 'delete'])->middleware('auth');
+
+// Manage News Data
+Route::get('/news/manage', [NewsController::class, 'manage'])->middleware('auth');
+
+// Show Single Item News
 Route::get('/news/{newsItem}', [NewsController::class, 'show']);
 
-// For Admin access
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
