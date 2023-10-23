@@ -25,6 +25,7 @@ class DatabaseSeeder extends Seeder
             'name' => 'The Admin',
             "username" => "admin_isme",
             'email' => 'admin@email.com',
+            'password' => bcrypt('passwordniadmin'),
         ]);
 
         News::factory(20)->create([

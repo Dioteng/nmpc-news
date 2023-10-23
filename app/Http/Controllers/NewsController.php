@@ -71,7 +71,7 @@ class NewsController extends Controller
 
     // Delete news data
     public function delete(News $newsItem) {
-        $newsItem->delete();
+        $newsItem->delete ();
 
         return redirect('/')->with('message', 'News deleted successfully');
     }

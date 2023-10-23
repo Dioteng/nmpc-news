@@ -11,7 +11,7 @@
             <div class="flex flex-col items-center justify-center text-center">
                 <h3 class="text-2xl mb-2">{{$newsItem['title']}}</h3>
                 <div class="text-lg my-4">
-                    <i class="fa-solid fa-location-dot"></i>Posted on: {{ $newsItem->created_at->format('M d, Y') }}
+                    <i class="fa-solid fa-billboard"></i>Posted on: {{ $newsItem->created_at->format('M d, Y') }}
                 </div>
                 <img
                 class="w-auto mr-6 mb-6"
@@ -27,7 +27,7 @@
                 </div>
             </div>
         </x-card>
-        <x-card class="mt-4 p-2 flex space-x-6">
+        {{-- <x-card class="mt-4 p-2 flex space-x-6">
             <a href="/news/{{$newsItem->id}}/edit">
               <i class="fa-solid fa-pencil"></i> Edit
             </a>
@@ -37,7 +37,7 @@
                  @method('DELETE')
                 <button class="text-red-500"><i class="fa-solid fa-trash"></i> Delete</button>
               </form>
-        </x-card>
+        </x-card> --}}
     </div>
 
 {{-- <h2>
