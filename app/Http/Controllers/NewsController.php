@@ -33,6 +33,7 @@ class NewsController extends Controller
         $formFields = $request->validate([
             'title' => 'required',
             'body' => 'required'
+            
         ]);
 
         if($request->hasFile('image')) {
@@ -66,7 +67,7 @@ class NewsController extends Controller
 
         $newsItem->update($formFields);
 
-        return back()->with('message', 'News updated successfully');
+        return redirect('/news/manage')->with('message', 'News updated successfully');
     }
 
     // Delete news data
@@ -79,6 +80,6 @@ class NewsController extends Controller
     // Manage news data
     public function manage() {
         return view('news.manage', [
-            'news' => auth()->user()->news()->get()]);
+            'news' => auth()->user()->news()->paginate(10)]);
     }
 }

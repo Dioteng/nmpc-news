@@ -35,7 +35,7 @@
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
 
-    <body class="mb-48">
+    <body>
         <nav class="flex justify-between items-center mb-4">
             <a href="/">
                 <div class="flex items-center">
@@ -49,14 +49,37 @@
             </a>
             <ul class="flex space-x-6 mr-6 text-lg">
                 @auth
-                <li>
-                    <a href="/news/manage" class="inline-flex items-center px-3 py-2 border border-transparent text-lg leading-4 font-medium rounded-md focus:outline-none transition ease-in-out duration-150"><i class="fa-solid fa-gear"></i> Manage News Archive</a>
-                </li>
+                    @if (auth()->user()->roles == 'admin')
+                        <li>
+                            <x-dropdown align="right" width="48">
+                                <x-slot name="trigger">
+                                    <button class="inline-flex items-center px-3 py-2 border border-transparent text-lg leading-4 font-medium rounded-md focus:outline-none transition ease-in-out duration-150 text-alpha">
+                                        <div>Admin Dashboard</div>
+
+                                        <div class="ml-1">
+                                            <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                                                <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                                            </svg>
+                                        </div>
+                                    </button>
+                                </x-slot>
+                                <x-slot name="content">
+                                    <x-dropdown-link href="/news/manage">
+                                        {{ __('Manage News') }}
+                                    </x-dropdown-link>
+            
+                                    <x-dropdown-link href="/admin/dashboard">
+                                        {{ __('Manage Comments') }}
+                                    </x-dropdown-link>
+                                </x-slot>
+                            </x-dropdown>
+                        </li>
+                    @endif
                 <li>
                     <x-dropdown align="right" width="48">
                         <x-slot name="trigger">
                             <button class="inline-flex items-center px-3 py-2 border border-transparent text-lg leading-4 font-medium rounded-md focus:outline-none transition ease-in-out duration-150 text-alpha">
-                                <div>Welcome {{auth()->user()->username}}! </div>
+                                <div>Welcome {{auth()->user()->name}}! </div>
 
                                 <div class="ml-1">
                                     <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
@@ -114,18 +137,16 @@
                 </div>
             @endif --}}
         </main>
-        <footer
-            class="fixed bottom-0 left-0 w-full flex items-center justify-start font-bold bg-charlie text-white h-24 mt-24 opacity-90 md:justify-center"
-        >
-            <p class="ml-2">Copyright &copy; 2023, All Rights reserved</p>
-
-            <a
-                href="/news/create"
-                class="absolute top-1/3 right-10 bg-black text-white py-2 px-5"
-                >Post News</a
-            >
-        </footer>
-
         <x-flash-message/>
     </body>
+    <footer
+    class="bottom-0 left-0 w-full flex items-center justify-start font-bold bg-charlie text-white h-24 mt-24 opacity-90 md:justify-center">
+    <p class="ml-2">Copyright &copy; 2023, All Rights reserved</p>
+
+    {{-- <a
+        href="/news/create"
+        class="top-1/3 right-10 bg-black text-white py-2 px-5"
+        >Post News</a
+    > --}}
+</footer>
 </html>

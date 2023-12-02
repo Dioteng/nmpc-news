@@ -7,7 +7,7 @@
       MSU-IIT<span class="text-black"> NMPC</span>
     </h1>
     <p class="text-2xl text-gray-200 font-bold my-4">
-      News & Updates Archive
+      News & Events Archive
     </p>
     {{-- <div>
       @auth

@@ -1,9 +1,10 @@
 <?php
 
-use App\Http\Controllers\NewsController;
-use App\Http\Controllers\ProfileController;
-use Illuminate\Support\Facades\Route;
 use App\Models\News;
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\NewsController;
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\ProfileController;
 
 /*
 |--------------------------------------------------------------------------
@@ -40,6 +41,9 @@ Route::get('/news/manage', [NewsController::class, 'manage'])->middleware('auth'
 // Show Single Item News
 Route::get('/news/{newsItem}', [NewsController::class, 'show']);
 
+Route::get('/admin/dashboard', [AdminController::class, 'index'])->name('admin.dashboard')->middleware('auth');
+
+Route::post('/admin/approve-comment/{comment}', [AdminController::class, 'approveComment'])->name('admin.approve.comment')->middleware('auth');
 
 Route::get('/dashboard', function () {
     return view('dashboard');

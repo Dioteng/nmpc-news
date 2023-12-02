@@ -23,9 +23,10 @@ class DatabaseSeeder extends Seeder
         
         $user = User::factory()->create([
             'name' => 'The Admin',
-            "username" => "admin_isme",
+            'contact_no' => '1234567890',
             'email' => 'admin@email.com',
             'password' => bcrypt('passwordniadmin'),
+            'roles' => 'admin',
         ]);
 
         News::factory(20)->create([

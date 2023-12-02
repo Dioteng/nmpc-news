@@ -14,7 +14,7 @@
                     <i class="fa-solid fa-billboard"></i>Posted on: {{ $newsItem->created_at->format('M d, Y') }}
                 </div>
                 <img
-                class="w-auto mr-6 mb-6"
+                class="w-96 mr-6 mb-6"
                 src="{{$newsItem->image ? asset('storage/' . $newsItem->image) : asset('/images/no-image.png')}}"
                 alt=""
                 />
@@ -27,6 +27,7 @@
                 </div>
             </div>
         </x-card>
+        <livewire:comments :model="$newsItem"/>
         {{-- <x-card class="mt-4 p-2 flex space-x-6">
             <a href="/news/{{$newsItem->id}}/edit">
               <i class="fa-solid fa-pencil"></i> Edit

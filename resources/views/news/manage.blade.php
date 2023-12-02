@@ -3,6 +3,13 @@
 
 @section('content')
 
+<div class="mb-4 text-right">
+  <a href="/news/create" class="inline-flex items-center bg-alpha text-white px-10 py-3 mr-10 rounded font-medium">
+      <i class="fas fa-plus mr-2"></i>
+      Create News
+  </a>
+</div>
+
 <table class="w-full table-auto rounded-sm">
     <tbody>
       @unless($news->isEmpty())
@@ -28,13 +35,17 @@
       @else
       <tr class="border-gray-300">
         <td class="px-4 py-8 border-t border-b border-gray-300 text-lg">
-          <p class="text-center">No Listings Found</p>
+          <p class="text-center">No News Found</p>
         </td>
       </tr>
       @endunless
 
     </tbody>
 </table>
+
+<div class="mt-6 p-4">
+  {{$news ->links()}}
+</div>
 
 
 @endsection
