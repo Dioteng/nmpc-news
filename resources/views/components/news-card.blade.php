@@ -4,7 +4,7 @@
     <div class="flex flex-col">
         <div class="w-full h-64 overflow-hidden rounded-t-3xl">
             <img
-            class="hidden w-full h-full mr-6 md:block rounded-t-3xl object-cover"
+            class="w-full h-full mr-6 md:block rounded-t-3xl object-cover"
             src="{{$newsItem->image ? asset('storage/' . $newsItem->image) : asset('/images/no-image.png')}}"
             alt=""
             />

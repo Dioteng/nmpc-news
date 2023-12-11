@@ -10,7 +10,7 @@
     </button>
     <div class="mx-4">
         <x-card class="p-10 w-auto h-auto mx-auto">
-            <div class="flex flex-col items-start justify-start text-start text-left md:mx-32 mx-4 mt-8">
+            <div class="flex flex-col items-start justify-start text-start text-left md:mx-32 mx-4 md:mt-8">
                 <h1 class="md:font-bold font-semibold md:text-3xl text-md mb-2">{{$newsItem['title']}}</h1>
                 <div class="md:text-lg text-xs">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 inline-block mr-1" viewBox="0 0 20 20" fill="currentColor">
@@ -32,7 +32,7 @@
             </div>
         </x-card>
         <div class="flex flex-row justify-start my-4 md:mx-32 mx-4">
-            <h1 class="font-semibold text-2xl mx-4">Tags: </h1>
+            <h1 class="font-semibold md:text-2xl text-md mx-4">Tags: </h1>
             <x-news-tags :tagsCsv="$newsItem->tags" class="mx-4"/>
         </div>
         <livewire:comments :model="$newsItem"/>

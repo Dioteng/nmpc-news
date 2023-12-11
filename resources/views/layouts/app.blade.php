@@ -53,9 +53,8 @@
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.0/flowbite.min.js"></script>
     </body>
-    <footer
-        class="bottom-0 left-0 w-full flex items-center justify-start font-bold bg-charlie text-white h-24 opacity-90 md:justify-center">
-        <p class="ml-2">Copyright &copy; 2023, All Rights reserved</p>
-        </footer>
+    <footer class="my-auto w-full flex items-center font-bold bg-charlie text-white h-24 opacity-90 md:justify-center">
+        <p class="flex items-center mx-16 text-xs md:text-xl">Copyright &copy; 2023, All Rights reserved</p>
+    </footer>
     
     </html>

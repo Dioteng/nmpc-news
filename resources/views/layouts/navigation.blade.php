@@ -15,7 +15,7 @@
                 <li>
                     <x-dropdown align="right" width="48">
                         <x-slot name="trigger">
-                            <button class="inline-flex items-center px-3 py-2 border border-transparent text-lg leading-4 font-medium rounded-md focus:outline-none transition ease-in-out duration-150 text-white">
+                            <button class="inline-flex items-center px-3 py-2 border border-transparent md:text-lg text-xs leading-4 font-medium rounded-md focus:outline-none transition ease-in-out duration-150 text-white">
                                 <div><i class="fa-solid fa-user-gear"></i>  Admin Dashboard</div>
 
                                 <div class="ml-1">

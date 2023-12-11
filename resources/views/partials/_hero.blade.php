@@ -6,7 +6,7 @@
 
   <section class="relative h-96 w-auto flex flex-row justify-center align-center text-center mb-4">
             <!-- Carousel Container-->
-            <div id="default-carousel" class="relative w-full hidden sm:block" data-carousel="slide">
+            <div id="default-carousel" class="relative w-full block" data-carousel="slide">
               <!-- Carousel wrapper -->
               <div class="relative h-full overflow-hidden rounded-lg">
                    <!-- Item 1 -->

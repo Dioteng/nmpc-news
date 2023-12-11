@@ -59,7 +59,7 @@
             </main>
 
             <footer class="my-auto w-full flex items-center font-bold bg-charlie text-white h-24 opacity-90 md:justify-center">
-                <p class="ml-2">Copyright &copy; 2023, All Rights reserved</p>
+                <p class="flex items-center mx-16 text-xs md:text-xl">Copyright &copy; 2023, All Rights reserved</p>
             </footer>
         </div>
 
