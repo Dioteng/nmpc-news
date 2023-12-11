@@ -22,7 +22,7 @@
             type="text"
             class="border border-gray-200 rounded p-2 w-full"
             name="title" 
-            value="{{ old('title') }}"
+            value="{{ old('title') }}" 
         />
         <x-input-error :messages="$errors->get('title')" class="mt-2" />
     </div>

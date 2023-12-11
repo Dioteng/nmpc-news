@@ -91,7 +91,7 @@
             </div>
 
             <!-- Login Container -->
-            <div class="min-h-screen w-1/3 flex flex-col sm:justify-center items-center pt-6 sm:pt-0 bg-gray-100">
+            <div class="min-h-screen md:w-1/3 w-full flex flex-col sm:justify-center items-center pt-6 sm:pt-0 bg-gray-100">
                 <div>
                     <a href="/">
                         <x-application-logo class="w-24 h-24 fill-current text-gray-500" />
@@ -103,6 +103,6 @@
                 </div>
             </div>
         </div>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.1/flowbite.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.0/flowbite.min.js"></script>
     </body>
 </html>

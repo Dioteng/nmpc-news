@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ProfileController;
+use App\Livewire\NewsForm;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,16 +22,18 @@ use App\Http\Controllers\ProfileController;
 Route::get('/', [NewsController::class, 'index']);
 
 // Create News Form
-Route::get('/news/create', [NewsController::class, 'create'])->middleware('auth');
+// Route::get('/news/create', [NewsController::class, 'create'])->middleware('auth');
+Route::get('/news/create', NewsForm::class)->middleware('auth');
 
 // Store News Data
-Route::post('/news', [NewsController::class, 'store'])->middleware('auth');
+// Route::post('/news', [NewsController::class, 'store'])->middleware('auth');
 
 // Edit News Form
-Route::get('/news/{newsItem}/edit', [NewsController::class, 'edit'])->middleware('auth');
+// Route::get('/news/{newsItem}/edit', [NewsController::class, 'edit'])->middleware('auth');
+Route::get('/news/{newsId}/edit', NewsForm::class)->middleware('auth');
 
 // Submit Update
-Route::put('/news/{newsItem}', [NewsController::class, 'update'])->middleware('auth');
+// Route::put('/news/{newsItem}', [NewsController::class, 'update'])->middleware('auth');
 
 // Delete News Data
 Route::delete('/news/{newsItem}', [NewsController::class, 'delete'])->middleware('auth');
@@ -41,9 +44,10 @@ Route::get('/news/manage', [NewsController::class, 'manage'])->middleware('auth'
 // Show Single Item News
 Route::get('/news/{newsItem}', [NewsController::class, 'show']);
 
+// For Comment System
 Route::get('/admin/dashboard', [AdminController::class, 'index'])->name('admin.dashboard')->middleware('auth');
-
 Route::post('/admin/approve-comment/{comment}', [AdminController::class, 'approveComment'])->name('admin.approve.comment')->middleware('auth');
+Route::delete('/admin/reject-comment/{comment}', [AdminController::class, 'rejectComment'])->name('admin.reject.comment')->middleware('auth');
 
 Route::get('/dashboard', function () {
     return view('dashboard');

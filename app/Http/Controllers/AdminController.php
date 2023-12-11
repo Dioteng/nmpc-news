@@ -20,4 +20,12 @@ class AdminController extends Controller
 
         return redirect()->route('admin.dashboard')->with('success', 'Comment approved successfully');
     }
+
+    public function rejectComment($commentId)
+    {
+        $comment = Comment::findOrFail($commentId);
+        $comment->delete();
+
+        return redirect()->route('admin.dashboard')->with('success', 'Comment rejected successfully');
+    }
 }

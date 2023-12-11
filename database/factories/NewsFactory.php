@@ -19,6 +19,7 @@ class NewsFactory extends Factory
         return [
             'title' => $this->faker->sentence(),
             'body' => $this->faker->paragraphs(4, true),
+            'tags' => 'News, Events, MSU-IIT NMPC',
         ];
     }
 }

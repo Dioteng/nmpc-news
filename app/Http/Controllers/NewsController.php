@@ -12,7 +12,7 @@ class NewsController extends Controller
     public function index() {
         return view('news.index', [
             'news' => News::latest()->filter
-            (request(['search']))->paginate(4)
+            (request(['tag', 'search']))->paginate(6)
         ]);
     }
 
@@ -32,8 +32,8 @@ class NewsController extends Controller
     public function store(Request $request) {
         $formFields = $request->validate([
             'title' => 'required',
-            'body' => 'required'
-            
+            'body' => 'required',
+            'tags' => 'nullable',
         ]);
 
         if($request->hasFile('image')) {
